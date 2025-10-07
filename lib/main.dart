@@ -28,9 +28,11 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 58, 152, 183),
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Demo Home Page amin edition'),
     );
   }
 }
@@ -102,13 +104,20 @@ class _MyHomePageState extends State<MyHomePage> {
           // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+
           children: <Widget>[
-            const Text('You have pushed the button this many times:'),
+            const Text('شما دکمه را به این تعداد فشار دادید:'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            Image.asset(
+              'assets/images/Gate_of_All_Nations,_Persepolis.jpg',
+              width: 600,
+              height: 100,
+            ),
+            const Icon(Icons.add_card_rounded, size: 50, color: Colors.green),
           ],
         ),
       ),
