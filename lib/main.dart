@@ -71,55 +71,157 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
+
         title: Text(widget.title),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.start,
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.black54),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          width: 400,
+          height: 500,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              const CircleAvatar(
+                radius: 50.0,
+                backgroundImage: NetworkImage(
+                  "https://upload.wikimedia.org/wikipedia/commons/b/b4/Wikipe-tan_avatar.png",
+                ),
+              ),
+              const SizedBox(height: 40),
+              const Text(
+                'aminsng',
+                style: TextStyle(fontSize: 40, color: Colors.blue),
+              ),
+              const SizedBox(height: 40),
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                width: 300,
+                height: 100,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        print('call');
+                      },
 
-          children: <Widget>[
-            const Text('شما دکمه را به این تعداد فشار دادید:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            Image.asset(
-              'assets/images/Gate_of_All_Nations,_Persepolis.jpg',
-              width: 600,
-              height: 100,
-            ),
-            const Icon(Icons.add_card_rounded, size: 50, color: Colors.green),
-          ],
+                      child: Container(
+                        height: 80,
+                        width: 50,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            const Icon(
+                              Icons.call,
+                              size: 50,
+                              color: Colors.black54,
+                            ),
+                            const Text(
+                              "CALL",
+                              style: TextStyle(color: Colors.black54),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        print('route');
+                      },
+
+                      child: Container(
+                        height: 80,
+                        width: 50,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            const Icon(
+                              Icons.route,
+                              size: 50,
+                              color: Color.fromARGB(255, 117, 214, 120),
+                            ),
+                            const Text(
+                              "ROUTE",
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 117, 214, 120),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        print('share');
+                      },
+                      child: Container(
+                        height: 80,
+                        width: 50,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            const Icon(
+                              Icons.messenger,
+                              size: 50,
+                              color: Color.fromARGB(255, 82, 212, 156),
+                            ),
+                            const Text(
+                              "SHARE",
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 82, 212, 156),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
+
+        // child: Column(
+        //   mainAxisAlignment: MainAxisAlignment.start,
+
+        //   children: <Widget>[
+        //     const Text('شما دکمه را به این تعداد فشار دادید:'),
+        //     Text(
+        //       '$_counter',
+        //       style: Theme.of(context).textTheme.headlineMedium,
+        //     ),
+        //     Image.asset(
+        //       'assets/images/Gate_of_All_Nations,_Persepolis.jpg',
+        //       width: 600,
+        //       height: 100,
+        //     ),
+        //     const Icon(Icons.add_card_rounded, size: 50, color: Colors.green),
+        //   ],
+        // ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
