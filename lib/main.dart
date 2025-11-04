@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(255, 58, 152, 183),
         ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page amin edition'),
+      home: const Login(),
     );
   }
 }
